@@ -52,7 +52,7 @@ var (
 // needing different TraceOptions for different connections.
 func Register(driverName string, options ...TraceOption) (string, error) {
 	// retrieve the driver implementation we need to wrap with instrumentation
-	db, err := sql.Open(driverName, "")
+	db, err := sql.Open(driverName, "/") 
 	if err != nil {
 		return "", err
 	}
